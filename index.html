@@ -3,18 +3,105 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="screen">
+    <link rel="stylesheet" href="octicons/octicons.css" media="screen">
     <link rel="stylesheet" href="styles/main.css" media="screen">
     <title></title>
   </head>
   <body>
-    <main>
+      <header>
+        <section class="logo-search">
+          <span class="mega-octicon octicon-mark-github"></span>
+          <input type="text" class="search" name="name" value="" placeholder="Search Repos">
+        </section>
+        <section class="nav-head">
+          <nav>
+            <a href="#">Pull Requests</a>
+            <a href="#">Issues</a>
+            <a href="#">Gist</a>
+          </nav>
+          <section class="profileNav">
+            <a href="#"><span class="octicon octicon-bell"></span></a>
+            <a href="#"><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></a>
+            <a href="#">ProPic</a>
+          </section>
+        </section>
+      </header>
+      <main>
+      <section class="profile">
+            <section class="name">
 
 
+            </section>
+            <section class="location-dateJoined">
 
+            </section>
+            <section class="follow">
 
+            </section>
+      </section>
+      <section class="repos">
+        <section class="tabs">
+          <button href="#" class="cont">Contributions</button>
+          <button href="#" class="reposit">Repositories</button>
+          <button href="#" class="pubAct">Public Acticity</button>
+          <a type="button" name="button">Edit Profile</a>
+        </section>
+        <section class="contributions, repo">
+            <section class="popular-repos">
+              <h3>Popular Repos</h3>
+            </section>
+            <section class="contribution-graph">
+              <h3>Contributions</h3>
+              <article class="graph-explaination">
 
+              </article>
+              <button type="button" name="button">Read the Hellow World guide</button>
 
+            </section>
+        </section>
+        <section class="all-repos, repo">
+          <nav class="all-repo-nav">
+            <input type="text" name="name" value="">
+            <input type="button" name="name" value="Search">
+            <button class ="allRepos" >All</button>
+            <button class= "pubRepos">Public</button>
+            <button class="privateRepos">Private</button>
+            <button class="sourceRepos">Source</button>
+            <button class="forkRepos">Forks</button>
+            <button class="mirrorRepos">Mirrors</button>
+            <button type="button" name="button">NEW</button>
+          </nav>
+          <section class="posted-repos">
+            <h1>Posted-Repos</h1>
+          </section>
+        </section>
+        <section class="public-activity, repo">
+          <h1>PUB ACT</h1>
+
+        </section>
+      </section>
     </main>
+    <footer>
+      <nav class="gitLegal">
+        <span>© 2015 GitHub, Inc.</span>
+        <a href="a">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+      </nav>
+      <img src="" alt="" />
+      <nav class="gitPersonal">
+        <a href="#">status</a>
+        <a href="#">API</a>
+        <a href="#">Training</a>
+        <a href="#">Shop</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Pricing</a>
+      </nav>
+    </footer>
+    <script src="token.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="main.js" ></script>
   </body>
