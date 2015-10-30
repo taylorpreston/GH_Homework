@@ -10,11 +10,19 @@ body{
   // $gutter: 0;
 }
 
-header{
+.mainHeader{
   @include span-columns(12);
   background: #F0F0F0;
   padding-top: 10px;
   margin-bottom: 20px;
+  height: 60px;
+  a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 14px;
+  }
 }
 
 .logo-search{
@@ -49,11 +57,32 @@ main{
 .profile{
   @include span-columns(3);
 }
+.location-dateJoined{
+  @include span-columns(12);
+  font-size: 14px;
+  padding: 30px 0;
+  border-top: 2px solid #F0F0F0;
+
+  span{
+    @include span-columns(1);
+  }
+}
+
+.follow{
+  font-size: 24px;
+  color: #34619B;
+  div{
+    @include span-columns(3);
+  }
+}
 
 .name{
   img{
     height: 230px;
     width: 230px;
+  }
+  h2{
+    font-weight: lighter;
   }
 }
 
@@ -67,43 +96,135 @@ main{
   @include span-columns(12);
   border-bottom: 2px solid #F0F0F0;
   button{
+    border: none;
     padding: 3px;
     text-decoration: none;
-  }
-  button:active{
-    border-top:2px solid #F0F0F0;
-    border-right:2px solid #F0F0F0;
-    border-left:2px solid #F0F0F0;
-    border-bottom: 4px solid white;
+    background-color: white;
+    &:focus{
+        outline: none;
+      }
+
   }
   a{
     float: right;
   }
 }
+
+.all-repo-nav{
+  .all-repo-search{
+    @include span-columns(6);
+    padding: 20px 0;
+    .search{
+      @include span-columns(8);
+      display: block;
+      height: 35px;
+    }
+    .searchBtn{
+      @include span-columns(3);
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: none;
+      background-color: #F1F1F1;
+      display: block;
+
+    }
+  }
+
+  .all-repo-buttons{
+    @include span-columns(6);
+    padding: 20px 0;
+    button{
+      float: left;
+      background: white;
+      color: #3D76C2;
+      border: none;
+      font-size: 14px;
+    &:focus{
+        outline: none;
+      }
+    }
+  }
+}
+
 .posted-repos{
   h1{
     font-size: 20px;
     background-color: #F5F5F5;
   }
-  a{
-    // padding: 10px 5px 10px 5px;
-    display: block;
-    text-decoration: none;
-    color:#3D76C2;
-    font-size: 20px;
-    border-top: 1px solid #F0F0F0;
-    border-bottom: 1px solid #F0F0F0;
 
-  }
-  a:hover{
-    text-decoration: underline;
+  div{
+    @include span-columns(12);
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 25px;
+    a{
+      @include span-columns(11);
+      display: block;
+      text-decoration: none;
+      color:#3D76C2;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
   }
 }
 
-
+.repoLang{
+  @include span-columns(2);
+  float:right;
+  position: relative;
+  bottom: 20px;
+  font-size: 12px;
+  color: #888888;
+}
+.repoTime{
+  @include span-columns(12);
+  font-size: 14px;
+  color: #888888;
+}
 
 
 footer{
   @include span-columns(12);
   text-align: center;
+  font-size: 12px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: #3D76C2
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+  span{
+    @include span-columns(1);
+  }
+
+}
+
+
+.tabContainer {
+  display: none;
+}
+.contributions {
+  display: block;
+}
+
+.tabBtn.active {
+  border-top:2px solid #F0F0F0;
+  border-right:2px solid #F0F0F0;
+  border-left:2px solid #F0F0F0;
+  border-bottom: 4px solid white;
+}
+
+.gitLegal{
+  @include span-columns(5.5);
+
+}
+.gitPersonal{
+  @include span-columns(5.5);
 }

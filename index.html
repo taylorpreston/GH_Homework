@@ -8,7 +8,7 @@
     <title></title>
   </head>
   <body>
-      <header>
+      <header class="mainHeader">
         <section class="logo-search">
           <span class="mega-octicon octicon-mark-github"></span>
           <input type="text" class="search" name="name" value="" placeholder="Search Repos">
@@ -40,57 +40,61 @@
             </section>
       </section>
       <section class="repos">
-        <section class="tabs">
-          <button href="#" class="cont">Contributions</button>
-          <button href="#" class="reposit">Repositories</button>
+        <header class="tabs">
+          <button href="#" class="tabBtn cont active" data-target=".contributions">Contributions</button>
+          <button href="#" class="tabBtn reposit" data-target=".all-repos">Repositories</button>
           <button href="#" class="pubAct">Public Acticity</button>
           <a type="button" name="button">Edit Profile</a>
-        </section>
-        <section class="contributions, repo">
+        </header>
+        <section class="contributions repo tabContainer">
             <section class="popular-repos">
               <h3>Popular Repos</h3>
+              <!-- this is where the popular repos are posted -->
             </section>
             <section class="contribution-graph">
               <h3>Contributions</h3>
               <article class="graph-explaination">
 
               </article>
-              <button type="button" name="button">Read the Hellow World guide</button>
-
+              <!-- <button type="button" name="button">Read the Hellow World guide</button> -->
             </section>
         </section>
-        <section class="all-repos, repo">
+        <section class="all-repos repo tabContainer">
           <nav class="all-repo-nav">
-            <input type="text" name="name" value="">
-            <input type="button" name="name" value="Search">
-            <button class ="allRepos" >All</button>
-            <button class= "pubRepos">Public</button>
-            <button class="privateRepos">Private</button>
-            <button class="sourceRepos">Source</button>
-            <button class="forkRepos">Forks</button>
-            <button class="mirrorRepos">Mirrors</button>
-            <button type="button" name="button">NEW</button>
+            <section class="all-repo-search">
+              <input type="text" class="search" name="name" value="" placeholder="Find a repository...">
+              <input type="button" class="searchBtn" name="name" value="Search">
+            </section>
+            <section class="all-repo-buttons">
+              <button class ="allRepos" >All</button>
+              <button class= "pubRepos">Public</button>
+              <button class="privateRepos">Private</button>
+              <button class="sourceRepos">Source</button>
+              <button class="forkRepos">Forks</button>
+              <button class="mirrorRepos">Mirrors</button>
+              <button type="button" name="button">NEW</button>
+            </section>
           </nav>
           <section class="posted-repos">
-            <h1>Posted-Repos</h1>
+            <!-- this is where  all the repos are posts are  -->
           </section>
         </section>
-        <section class="public-activity, repo">
-          <h1>PUB ACT</h1>
-
-        </section>
+        <!-- <section class="public-activity, repo">
+          <h1>PUB ACT</h1> -->
+          <!-- this is where the public activity is posted -->
+        <!-- </section> -->
       </section>
     </main>
     <footer>
       <nav class="gitLegal">
-        <span>© 2015 GitHub, Inc.</span>
+        <a>© 2015 GitHub, Inc.</a>
         <a href="a">Terms</a>
         <a href="#">Privacy</a>
         <a href="#">Security</a>
         <a href="#">Contact</a>
         <a href="#">Help</a>
       </nav>
-      <img src="" alt="" />
+      <span class="octicon octicon-mark-github"></span>
       <nav class="gitPersonal">
         <a href="#">status</a>
         <a href="#">API</a>
@@ -102,6 +106,7 @@
       </nav>
     </footer>
     <script src="token.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="main.js" ></script>
   </body>

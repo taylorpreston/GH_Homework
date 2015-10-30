@@ -5,33 +5,45 @@ $.ajaxSetup({
 });
 
 $.getJSON('https://api.github.com/users/taylorpreston').done(function(data) {
-  // console.log(data);
+  console.log(data);
 
   var name = ('<h1>'+ data.name +'</h1>')
   var username = ('<h2>'+ data.login +'</h2>')
   var profileImg = ('<img src='+data.avatar_url+'/>')
-  var dateJoined = ('<div>'+data.created_at+'</div>')
-  var location = ('<div>'+data.location+'</div>')
-  var followers = data.followers
-  var starred = "0"
+  var dateJoined = ('<span class="octicon octicon-clock"></span><div>'+moment(data.created_at)+'</div>')
+  var location = ('<span class="octicon octicon-location"></span><div>'+data.location+'</div>')
+  var followers = ('<div>'+data.followers+'</div>')
+  var following = ('<div>'+data.following+'</div>')
+  var starred = ('<div> 0 </div>')
   var following = data.following
 
   var nameSec = $('.name')
   var locDate = $('.location-dateJoined')
+  var followSec = $('.follow')
 
   nameSec.append(profileImg)
   nameSec.append(name)
   nameSec.append(username)
   locDate.append(location)
   locDate.append(dateJoined)
+  followSec.append(followers)
+  followSec.append(following)
+  followSec.append(starred)
 
 });
 
 $.getJSON('https://api.github.com/users/taylorpreston/repos').done(function(repos) {
+
     repos.forEach(function(repo){
-      console.log(repo)
-      var repoUrl = repo.url
-      var name = ('<a href='+repoUrl+'>'+' <span class="octicon octicon-repo"></span>  '+repo.name+'<a>')
+      // console.log(repo)
+      //Repo Properties//
+      var repoUrl = repo.url;
+      var repoMomentDay = moment(repo.created_at).fromNow();
+      var repoLang =repo.language
+
+      var repoElemnt = '<div><a href='+repoUrl+'>'+repo.name+'</a><span class="repoLang"> '+repoLang+' <span class="octicon octicon-star"></span></span><time class="repoTime">' +repoMomentDay+'</time></div>'
+
+      //Repo Section and Classes//
       var RepoDisplay = $('.posted-repos')
       var PopularPosts = $('.popular-repos')
       var allRepos = $('.allRepos')
@@ -40,19 +52,8 @@ $.getJSON('https://api.github.com/users/taylorpreston/repos').done(function(repo
       var forkRepos = $('.forkRepos')
       var mirrorRepos = $('.mirrorRepos')
 
-      PopularPosts.append(name)
+        RepoDisplay.append(repoElemnt)
 
-      var repoClick = function(){
-        RepoDisplay.html = "";
-        repo.display = true;
-        RepoDisplay.append(name)
-      }
-
-      allRepos.click(repoClick)
-
-      if (repo.privte = true){
-        privRepos.click(repoClick)
-      }
 
     })
 
@@ -60,25 +61,19 @@ $.getJSON('https://api.github.com/users/taylorpreston/repos').done(function(repo
     var allRepos = $('.all-repos')
     var postedRepos = $('.posted-repos')
     var publicAct = $('.public-activity')
-    var contribTab = $('.cont')
-    var repositTab = $('.reposit')
-    var publicTab = $('.pubAct')
+    var tabBtns = $('.tabBtn');
+    var tabContainers = $('.tabContainer');
 
-    var tabActivate = function(){
-      this.active = true
-    }
+    tabBtns.on('click', function(event){
+      var btn = $(event.target);
+      var targetTab = $(btn.data('target'));
 
-    var tabClick = function(repo_display){
-        if(this.active = true){
-        repo_display.display = true
-      } else {
-        repo.diplay = none;
-      };
-    }
+      tabBtns.removeClass('active');
+      btn.addClass('active');
+      tabContainers.hide();
+      targetTab.fadeIn();
+    });
 
-    contribTab.click(tabActivate, tabClick(allRepos))
-    repositTab.click(tabActivate, tabClick(postedRepos))
-    publicTab.click(tabActivate, tabClick(postedRepos))
 
   });
 

@@ -6,16 +6,23 @@ html {
 *::before {
   box-sizing: inherit; }
 
-header {
+.mainHeader {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
   background: #F0F0F0;
   padding-top: 10px;
-  margin-bottom: 20px; }
-  header:last-child {
+  margin-bottom: 20px;
+  height: 60px; }
+  .mainHeader:last-child {
     margin-right: 0; }
+  .mainHeader a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 14px; }
 
 .logo-search {
   float: left;
@@ -78,9 +85,41 @@ main {
   .profile:last-child {
     margin-right: 0; }
 
+.location-dateJoined {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  font-size: 14px;
+  padding: 30px 0;
+  border-top: 2px solid #F0F0F0; }
+  .location-dateJoined:last-child {
+    margin-right: 0; }
+  .location-dateJoined span {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 6.17215%; }
+    .location-dateJoined span:last-child {
+      margin-right: 0; }
+
+.follow {
+  font-size: 24px;
+  color: #34619B; }
+  .follow div {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .follow div:last-child {
+      margin-right: 0; }
+
 .name img {
   height: 230px;
   width: 230px; }
+
+.name h2 {
+  font-weight: lighter; }
 
 .repos {
   max-width: 68em;
@@ -106,36 +145,163 @@ main {
   .tabs:last-child {
     margin-right: 0; }
   .tabs button {
+    border: none;
     padding: 3px;
-    text-decoration: none; }
-  .tabs button:active {
-    border-top: 2px solid #F0F0F0;
-    border-right: 2px solid #F0F0F0;
-    border-left: 2px solid #F0F0F0;
-    border-bottom: 4px solid white; }
+    text-decoration: none;
+    background-color: white; }
+    .tabs button:focus {
+      outline: none; }
   .tabs a {
     float: right; }
+
+.all-repo-nav .all-repo-search {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 20px 0; }
+  .all-repo-nav .all-repo-search:last-child {
+    margin-right: 0; }
+  .all-repo-nav .all-repo-search .search {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    display: block;
+    height: 35px; }
+    .all-repo-nav .all-repo-search .search:last-child {
+      margin-right: 0; }
+  .all-repo-nav .all-repo-search .searchBtn {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: none;
+    background-color: #F1F1F1;
+    display: block; }
+    .all-repo-nav .all-repo-search .searchBtn:last-child {
+      margin-right: 0; }
+
+.all-repo-nav .all-repo-buttons {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 20px 0; }
+  .all-repo-nav .all-repo-buttons:last-child {
+    margin-right: 0; }
+  .all-repo-nav .all-repo-buttons button {
+    float: left;
+    background: white;
+    color: #3D76C2;
+    border: none;
+    font-size: 14px; }
+    .all-repo-nav .all-repo-buttons button:focus {
+      outline: none; }
 
 .posted-repos h1 {
   font-size: 20px;
   background-color: #F5F5F5; }
 
-.posted-repos a {
+.posted-repos div {
+  float: left;
   display: block;
-  text-decoration: none;
-  color: #3D76C2;
-  font-size: 20px;
-  border-top: 1px solid #F0F0F0;
-  border-bottom: 1px solid #F0F0F0; }
+  margin-right: 2.35765%;
+  width: 100%;
+  border-bottom: 2px solid #F0F0F0;
+  padding-bottom: 25px; }
+  .posted-repos div:last-child {
+    margin-right: 0; }
+  .posted-repos div a {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 91.4702%;
+    display: block;
+    text-decoration: none;
+    color: #3D76C2;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0; }
+    .posted-repos div a:last-child {
+      margin-right: 0; }
+  .posted-repos div a:hover {
+    text-decoration: underline; }
 
-.posted-repos a:hover {
-  text-decoration: underline; }
+.repoLang {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  float: right;
+  position: relative;
+  bottom: 20px;
+  font-size: 12px;
+  color: #888888; }
+  .repoLang:last-child {
+    margin-right: 0; }
+
+.repoTime {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  font-size: 14px;
+  color: #888888; }
+  .repoTime:last-child {
+    margin-right: 0; }
 
 footer {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 25px;
+  margin-top: 15px; }
   footer:last-child {
+    margin-right: 0; }
+  footer a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: #3D76C2; }
+  footer:hover {
+    text-decoration: underline; }
+  footer span {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 6.17215%; }
+    footer span:last-child {
+      margin-right: 0; }
+
+.tabContainer {
+  display: none; }
+
+.contributions {
+  display: block; }
+
+.tabBtn.active {
+  border-top: 2px solid #F0F0F0;
+  border-right: 2px solid #F0F0F0;
+  border-left: 2px solid #F0F0F0;
+  border-bottom: 4px solid white; }
+
+.gitLegal {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 44.55627%; }
+  .gitLegal:last-child {
+    margin-right: 0; }
+
+.gitPersonal {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 44.55627%; }
+  .gitPersonal:last-child {
     margin-right: 0; }
