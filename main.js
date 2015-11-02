@@ -5,7 +5,7 @@ $.ajaxSetup({
 });
 
 $.getJSON('https://api.github.com/users/taylorpreston').done(function(data) {
-  console.log(data);
+  // console.log(data);
 
   var name = ('<h1>'+ data.name +'</h1>')
   var username = ('<h2>'+ data.login +'</h2>')
@@ -20,6 +20,7 @@ $.getJSON('https://api.github.com/users/taylorpreston').done(function(data) {
   var nameSec = $('.name')
   var locDate = $('.location-dateJoined')
   var followSec = $('.follow')
+  var proPicNav = $('.proPicNav')
 
   nameSec.append(profileImg)
   nameSec.append(name)
@@ -29,23 +30,23 @@ $.getJSON('https://api.github.com/users/taylorpreston').done(function(data) {
   followSec.append(followers)
   followSec.append(following)
   followSec.append(starred)
+  proPicNav.prepend(profileImg)
+
 
 });
 
 $.getJSON('https://api.github.com/users/taylorpreston/repos').done(function(repos) {
-
     repos.forEach(function(repo){
       // console.log(repo)
       //Repo Properties//
       var repoUrl = repo.url;
       var repoMomentDay = moment(repo.created_at).fromNow();
       var repoLang =repo.language
-
       var repoElemnt = '<div><a href='+repoUrl+'>'+repo.name+'</a><span class="repoLang"> '+repoLang+' <span class="octicon octicon-star"></span></span><time class="repoTime">' +repoMomentDay+'</time></div>'
 
       //Repo Section and Classes//
       var RepoDisplay = $('.posted-repos')
-      var PopularPosts = $('.popular-repos')
+      var PopularRepos = $('.popular-repos')
       var allRepos = $('.allRepos')
       var pubRepos = $('.pubRepos')
       var privRepos = $('.privateRepos')
@@ -53,6 +54,7 @@ $.getJSON('https://api.github.com/users/taylorpreston/repos').done(function(repo
       var mirrorRepos = $('.mirrorRepos')
 
         RepoDisplay.append(repoElemnt)
+        PopularRepos.append(repoElemnt)
 
 
     })
