@@ -15,7 +15,6 @@ $.getJSON('https://api.github.com/users/taylorpreston').done(function(data) {
   var followers = ('<div>'+data.followers+'</div>')
   var following = ('<div>'+data.following+'</div>')
   var starred = ('<div> 0 </div>')
-  var following = data.following
 
   var nameSec = $('.name')
   var locDate = $('.location-dateJoined')

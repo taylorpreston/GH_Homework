@@ -29,16 +29,7 @@
       </header>
       <main>
       <section class="profile">
-            <section class="name">
 
-
-            </section>
-            <section class="location-dateJoined">
-
-            </section>
-            <section class="follow">
-
-            </section>
       </section>
       <section class="repos">
         <header class="tabs">
@@ -106,7 +97,39 @@
         <a href="#">Pricing</a>
       </nav>
     </footer>
+
+    <script type="text/template" id="profileTemplate">
+
+      <section class="name">
+        <h1><%= name %></h1>
+        <h2><%= username %></h2>
+        <img src="<%= profileImg  %>" />
+      </section>
+      <section class="location-dateJoined">
+        <span class="octicon octicon-clock"></span><div><%= dateJoined %></div>
+        <span class="octicon octicon-location"></span><div><%= location %></div>
+      </section>
+      <section class="follow">
+        <div class=""><%= followers %></div>
+        <div class=""><%= following  %></div>
+        <div class="">0</div>
+      </section>
+
+    </script>
+
+    <script type="text/template" id="repoTemplate">
+
+        <section class="repoTemplate">
+          <div>
+            <a href='<%= repoUrl %>'><%= repoName %></a>
+            <span class="repoLang"><%= repoLang %> <span class="octicon octicon-star"></span></span>
+            <time class="repoTime"><%= repoMomentDay %></time>
+          </div>
+        </section>
+    </script>
+
     <script src="token.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="JS/loDash.js" ></script>
