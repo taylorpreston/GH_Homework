@@ -158,9 +158,19 @@ main{
       color: #3D76C2;
       border: none;
       font-size: 14px;
+      margin-top: 10px;
     &:focus{
         outline: none;
       }
+    &.NEW{
+      background-color: #65BB45;
+      font-weight: bolder;
+      color: white;
+      border: 1px #59AA3A solid;
+      border-radius: 4px;
+      height: 35px;
+      margin: 1px;
+    }
     }
   }
 }
@@ -187,6 +197,7 @@ main{
     a:hover{
       text-decoration: underline;
     }
+
   }
 }
 

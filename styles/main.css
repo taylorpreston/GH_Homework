@@ -215,9 +215,18 @@ main {
     background: white;
     color: #3D76C2;
     border: none;
-    font-size: 14px; }
+    font-size: 14px;
+    margin-top: 10px; }
     .all-repo-nav .all-repo-buttons button:focus {
       outline: none; }
+    .all-repo-nav .all-repo-buttons button.NEW {
+      background-color: #65BB45;
+      font-weight: bolder;
+      color: white;
+      border: 1px #59AA3A solid;
+      border-radius: 4px;
+      height: 35px;
+      margin: 1px; }
 
 .posted-repos h1 {
   font-size: 20px;
