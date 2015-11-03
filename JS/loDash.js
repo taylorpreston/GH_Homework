@@ -7,6 +7,7 @@ $.ajaxSetup({
 var urlProfile = 'https://api.github.com/users/taylorpreston'
 var urlRepos = 'https://api.github.com/users/taylorpreston/repos'
 var postRepos = $('.posted-repos')
+var popularRepos = $('.popular-repos')
 var profile = $('.profile')
 
 function DisplayRepos(data){
@@ -15,6 +16,7 @@ function DisplayRepos(data){
   //repo compiling function:
   var compiledRepoTemp = _.template(repoTemp)
   postRepos.append(compiledRepoTemp(data))
+  popularRepos.append(compiledRepoTemp(data))
 };
 
 function getRepoData(){
